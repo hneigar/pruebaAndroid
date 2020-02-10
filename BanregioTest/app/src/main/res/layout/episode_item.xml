@@ -8,6 +8,8 @@
     android:layout_marginBottom="16dp"
     android:orientation="horizontal">
 
+    <!--    No se está atendiendo el warning de Android Studio sobre el contentDescription. Esto es
+    útil para la accesabilidad de la aplicación.-->
     <ImageView
         android:id="@+id/episodeCoverPage"
         android:layout_width="110sp"
@@ -21,6 +23,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!--        No se está atendiendo el warning de Android Studio sobre considerar usar layout_marginEnd,
+        para ser más generales y poder soportar right-to-left layouts.-->
         <TextView
             android:id="@+id/episodeTitle"
             android:layout_width="match_parent"

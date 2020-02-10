@@ -21,6 +21,8 @@ public class EpisodeViewModelFactory implements ViewModelProvider.Factory {
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+        // Hay que revisar que nuestro tipo T sí sea del tipo que esperamos. Para evitar
+        // posibles crashes más adelante. Se puede validar con un instanceof.
         return (T) new EpisodeViewModel(mApplication, mExtra);
     }
 }

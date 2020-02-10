@@ -6,6 +6,9 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+// Aquí estamos creando una clase que sólo maneja un campo "average" de tipo float.
+// Creo que podríamos prescindir de esta clase por completo, y así evitar tener que
+// implementar Parcelable; ya que el tipo float sí se puede incluir en bundles sin problema.
 public class Rating implements Parcelable{
 
     @SerializedName("average")@Expose

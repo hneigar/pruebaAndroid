@@ -32,6 +32,7 @@ import com.example.banregiotest.view_model.factories.SeasonViewModelFactory;
 import java.util.ArrayList;
 import java.util.List;
 
+// Mismo comentario sobre nombre de Activities.
 public class TvShowDetail extends AppCompatActivity implements TvShowItemClickListener {
 
     public ImageView coverPageImage;
@@ -52,6 +53,7 @@ public class TvShowDetail extends AppCompatActivity implements TvShowItemClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tv_show_detail);
+        // Aquí puede haber una Null pointer exception.
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         coverPageImage=(ImageView) findViewById(R.id.detailCoverPage);
@@ -61,8 +63,10 @@ public class TvShowDetail extends AppCompatActivity implements TvShowItemClickLi
         tvShowRating = (RatingBar) findViewById(R.id.tvShowRating);
 
         Bundle bundle = getIntent().getExtras();
+        // Aquí puede haber una Null pointer exception.
         tvShow = bundle.getParcelable("tvShow");
 
+        // Aquí puede haber una Null pointer exception.
         initialiceTvShowData(tvShow);
         initialization();
         getSeasons();
@@ -86,12 +90,14 @@ public class TvShowDetail extends AppCompatActivity implements TvShowItemClickLi
         seasonViewModel = ViewModelProviders.of(this).get(SeasonViewModel.class);
     }
 
+    // Typo en 'initialize'.
     protected void initialiceTvShowData(TvShow tvShow){
         setTitle(tvShow.getTitle());
 
         SeasonViewModelFactory seasonViewModelFactory = new SeasonViewModelFactory(this.getApplication(), tvShow.getId());
         seasonViewModel = ViewModelProviders.of(this, seasonViewModelFactory).get(SeasonViewModel.class);
 
+        // Evitar usar texto hard-codeado; ya que nos limita a la posibilidad de incluir localización.
         tvShowTitle.setText("Premiered: " + tvShow.getPremierDate());
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -112,6 +118,7 @@ public class TvShowDetail extends AppCompatActivity implements TvShowItemClickLi
     private void getSeasons() {
         seasonViewModel.getSeasonLiveData().observe(this, seasonsResponse -> {
             if (seasonsResponse != null) {
+                // Evitar dejar código comentado.
                 //progress_circular_movie_article.setVisibility(View.GONE);
                 List<Season> seasons = seasonsResponse;
                 //tvShowGenres.setText(String.valueOf(seasons.get(0).getNumber()));
@@ -132,6 +139,7 @@ public class TvShowDetail extends AppCompatActivity implements TvShowItemClickLi
         }
     }
 
+    // Este código es necesario?
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){

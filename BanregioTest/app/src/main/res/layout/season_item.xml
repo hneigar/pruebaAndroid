@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Hay unos namespaces (app, tools) que no se están utilizando y sin embargo se están declarando.-->
+<!--Usar un LinearLayout como único hijo inmediato de otro LinearLayout, cambiando la orientación,
+es un poco inusual. Se podría usar directamente el LinearLayout hijo con orientación vertical. Si
+este item se usa en un RecyclerView, esa vista se encargará de dar la orientación necesaria al conjunto
+de items.-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"

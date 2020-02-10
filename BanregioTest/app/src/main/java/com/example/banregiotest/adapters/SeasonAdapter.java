@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class SeasonAdapter extends RecyclerView.Adapter<SeasonViewHolder> {
 
+    // Este context no se está utilizando.
     private Context context;
     ArrayList<Season> seasonArrayList;
     private TvShowItemClickListener tvShowItemClickListener;

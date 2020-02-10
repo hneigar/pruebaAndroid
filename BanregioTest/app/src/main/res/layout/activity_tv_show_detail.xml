@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--No se está utilizando el ConstraintLayout como ConstraintLayout. Aunque es el Layout que
+    Android Studio sugiere por default, no está de más revisar si es realmente necesario
+    utilizarlo. (Nota: Yo soy fan del ConstraintLayout)-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,6 +23,10 @@
             android:layout_margin="16dp"
             android:orientation="vertical">
 
+            <!-- Parece ser que la decisión de utilizar layout_height=300dp se desprende del tipo
+             de imágenes que sabemos se van a cargar en esta pantalla. Es válido; pero si se va a usar en conjunto
+             con un wrap_content para layout_width, hay que considerar incluir un tipo de escalamiento de
+             imagen. No parece ser que se esté utilizando aquí, ni desde Glide en el código.-->
             <ImageView
                 android:id="@+id/detailCoverPage"
                 android:layout_width="wrap_content"
@@ -35,12 +42,16 @@
                 android:layout_gravity="center"
                 android:numStars="5" />
 
+            <!--Es bueno evitar usar texto default para los TextViews que se van a llenar dinámicamente,
+            ya que si no se recibe la información por alguna razón, aquí veríamos "TextView" en la lista.
+            Si sólo queremos ver el preview algún texto dummy, se puede usar tools:text="@tools:sample/*" por ejemplo.-->
             <TextView
                 android:id="@+id/detailTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="TextView" />
+                android:text="TextView"
+                tools:text="@tools:sample/full_names" />
 
             <TextView
                 android:id="@+id/detailDescription"

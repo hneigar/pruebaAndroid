@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Este layout es un buen ejemplo para sacarle más provecho a un ConstraintLayout. Usando ese
+tipo de layout podemos "aplanar" la jerarquía de vistas, evitando que el sistema agregue más pasadas
+a su árbol de vistas.-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
