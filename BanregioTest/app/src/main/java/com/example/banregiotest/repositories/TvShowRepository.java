@@ -109,4 +109,34 @@ public class TvShowRepository {
                 });
         return data;
     }
+
+    public LiveData<List<TvShow>> getTvShowSearch(String query) {
+        final MutableLiveData<List<TvShow>> data = new MutableLiveData<>();
+        banregioTestService.getTvShowSearch(query)
+                .enqueue(new Callback<List<TvShow>>() {
+
+
+                    @Override
+                    public void onResponse(Call<List<TvShow>> call, Response<List<TvShow>> response) {
+                        Log.d(TAG,"onResponse response:: " + response);
+
+
+
+                        if (response.body() != null) {
+                            data.setValue(response.body());
+
+                            Log.d(TAG, "Nombre:: " + response.body().get(0).getTitle());
+                            Log.d(TAG, "descripcion: " + response.body().get(0).getDescription());
+                            Log.d(TAG, "Imagen: " + response.body().get(0).getTvShowImage());
+                            Log.d(TAG, "genero: " + response.body().get(0).getGenres().get(0));
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<TvShow>> call, Throwable t) {
+                        data.setValue(null);
+                    }
+                });
+        return data;
+    }
 }

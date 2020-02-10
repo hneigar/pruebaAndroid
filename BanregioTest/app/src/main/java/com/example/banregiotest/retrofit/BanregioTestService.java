@@ -31,4 +31,10 @@ public interface BanregioTestService {
     Call<List<Episode>> getSeasonEpisodes(
             @Path(value = "seasonId", encoded = true) int seasonId
     );
+
+    @Headers("Content-Type: application/json")
+    @GET("/search/shows")
+    Call<List<TvShow>> getTvShowSearch(
+            @Query("q") String searchText
+    );
 }
