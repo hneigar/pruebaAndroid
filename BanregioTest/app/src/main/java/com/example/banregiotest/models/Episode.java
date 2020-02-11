@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Episode {
 
+    // Me parece que la anotación de @Expose es redundante aquí.
+    // Estas variables podrían ser privadas.
     @SerializedName("id")@Expose
     int id;
 

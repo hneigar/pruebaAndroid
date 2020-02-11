@@ -149,6 +149,9 @@ public class TvShow implements Parcelable {
         return 0;
     }
 
+    // Está bien usar código de otros lados para nuestros proyectos, pero vale la pena al menos
+    // modificar los mensajes para que sean únicos a nuestro código y que no queden como un
+    // template genérico.
     /**
      * Actual object serialization happens here, Write object content
      * to parcel one by one, reading should be done according to this write order

@@ -31,6 +31,8 @@ public class Season implements Parcelable {
         this.summary = summary;
     }
 
+    // Evitar dejar código comentado.
+    // Atender recomendaciones de Android Studio mientras sea pertinente.
     public Season(Parcel in) {
         //this.average = in.readFloat();
     }

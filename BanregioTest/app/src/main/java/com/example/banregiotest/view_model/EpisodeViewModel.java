@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+// Si no usamos el ApplicationContext en la clase, tal vez no sea necesario heredar de
+// AndroidViewModel. Podríamos usar ViewModel().
 public class EpisodeViewModel extends AndroidViewModel {
 
     private TvShowRepository tvShowRepository;
